@@ -1,0 +1,31 @@
+.layoutContainer {
+    width: 100%;
+    min-height: 100vh;
+ }
+ 
+ .headerContainer {
+    width: 100%;
+    height: 7rem;
+    background-color: #F3F6FD;
+ }
+ 
+ .rowContainer {
+    display: flex;
+ }
+ 
+ .colContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+ }
+ 
+ 
+ .contentContainer {
+    flex-grow: 5;
+    background-color: #F3F6FD;
+    height: calc(100vh - 9.2rem);
+    overflow-y: auto;
+    padding-left: 3.438rem;
+    padding-top: 2.2rem;
+    padding-right: 2.438rem;
+ }
