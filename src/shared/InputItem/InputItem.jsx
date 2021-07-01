@@ -17,7 +17,7 @@ const InputItem = ({
         {...formMethods.register(id, requirements)}
         type={type}
         placeholder={placeholderText}
-        style={styles.inputItem}
+        className={styles.inputItem}
         />
     )
 
