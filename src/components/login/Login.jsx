@@ -25,7 +25,7 @@ const Login = () => {
             >
                 <InputItem id='username' requirements={{ required: true }} placeholderText='Username' />
                 <InputItem id='password' requirements={{ required: true }} placeholderText='Password' type='password' />
-                <Button loading={loading} text='Login' />
+                <Button isLoading={loading} text='Login' />
             </form>
         </FormProvider>
     )

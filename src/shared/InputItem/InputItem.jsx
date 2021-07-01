@@ -7,17 +7,18 @@ const InputItem = ({
     id,
     requirements,
     placeholderText,
-    type='text'
+    type = 'text'
 }) => {
 
     const formMethods = useFormContext();
 
     return (
         <input
-        {...formMethods.register(id, requirements)}
-        type={type}
-        placeholder={placeholderText}
-        className={styles.inputItem}
+            {...formMethods.register(id, requirements)}
+            name={id}
+            type={type}
+            placeholder={placeholderText}
+            className={styles.inputItem}
         />
     )
 

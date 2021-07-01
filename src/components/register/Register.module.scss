@@ -1,0 +1,9 @@
+@import '../../Containers.scss';
+@import "node_modules/nord/src/sass/nord.scss";
+
+.registerForm {
+    @extend %vertical-container;
+
+    background-color: $nord5;
+    border-radius: 0.5rem;
+}
