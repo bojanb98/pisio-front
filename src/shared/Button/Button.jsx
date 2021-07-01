@@ -1,8 +1,10 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import CircleLoader from "react-spinners/CircleLoader";
+import { css } from "@emotion/react";
+import ClipLoader from "react-spinners/ClipLoader";
 import styles from './Button.module.scss'
+import '../../App.css';
 
 const Button = ({ text, isLoading }) => {
 
@@ -12,13 +14,17 @@ const Button = ({ text, isLoading }) => {
         setLoading(isLoading);
     }, [isLoading])
 
+    const override = css`
+        margin: 0 0.4rem 0 0;
+    `;
+
     return (
         <button
             className={styles.primaryButton}
             type="submit"
         >
-            <CircleLoader loading={loading} />
-            <span>{text}</span>
+            <ClipLoader loading={loading} size={15} css={override}/>
+            {text}
         </button>
     )
 }

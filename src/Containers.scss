@@ -1,0 +1,18 @@
+%default-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+%vertical-container {
+    @extend %default-container;
+
+    flex-direction: column;
+}
+
+%horizontal-container {
+    @extend %default-container;
+
+    flex-direction: row;
+}

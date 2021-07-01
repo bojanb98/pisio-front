@@ -1,7 +1,13 @@
-@import "node_modules/nord/src/nord.scss";
+@import "node_modules/nord/src/sass/nord.scss";
+@import "../../Containers.scss";
 
 .primaryButton {
+    @extend %horizontal-container;
+
     border-radius: 1rem;
     background-color: $nord8;
     color: $nord0;
+    width: 8rem;
+    height: 2rem;
+    font-size: medium;
 }
