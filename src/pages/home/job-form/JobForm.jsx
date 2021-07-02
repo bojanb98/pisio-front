@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import styles from './JobForm.module.scss';
 import Button from '../../../shared/Button/Button';
-import InputItem from '../../../shared/InputItem/InputItem';
 import FileItem from './FileItem';
 import { useEffect } from 'react';
 
@@ -34,7 +33,7 @@ const JobForm = () => {
                     {'Choose images'}
                 </label>
                 <div className={styles.filesContainer}>
-                    {images && images.length > 0 && Array.from(images).map(image => <FileItem fileName={image.name} />)}
+                    {images && images.length > 0 && Array.from(images).map((image, key) => <FileItem key={key} fileName={image.name} />)}
                 </div>
                 <Button isLoading={loading} text='Add job' />
             </form>

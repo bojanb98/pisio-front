@@ -7,4 +7,4 @@ export default {
   title: 'Components/FileItem',
 }
 
-export const SimpleFileItem = () => <FileItem fileName='slika.png' />
+export const SimpleFileItem = () => <FileItem key={1} fileName='slika.png' />
