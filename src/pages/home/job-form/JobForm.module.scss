@@ -1,0 +1,18 @@
+@import '../../../Containers.scss';
+@import "node_modules/nord/src/sass/nord.scss";
+
+.jobForm {
+    @extend %horizontal-container;
+
+    background-color: $nord5;
+}
+
+.chooseImagesLabel {
+    background-color: $nord4;
+    font-size: medium;
+    color: $nord0;
+}
+
+.fileInput {
+    display: none;
+}

@@ -1,0 +1,24 @@
+@import '../../../Containers.scss';
+@import "node_modules/nord/src/sass/nord.scss";
+
+.fileItem {
+    @extend %horizontal-container;
+
+    background-color: $nord6;
+
+    border-style: solid;
+    border-color: $nord8;
+    border-width: 0.2rem;
+    border-radius: 0.8rem;
+
+    font-size: medium;
+    width: fit-content;
+    height: 1.5rem;
+    padding: 0.3rem;
+
+}
+
+.deleteButton {
+    margin: 0 0 0 0.2rem;
+    color: $nord8;
+}

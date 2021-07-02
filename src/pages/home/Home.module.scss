@@ -1,0 +1,8 @@
+@import '../../Containers.scss';
+@import "node_modules/nord/src/sass/nord.scss";
+
+.homePage {
+    @extend %vertical-container;
+
+    background-color: $nord5;
+}
