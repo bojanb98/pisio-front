@@ -33,8 +33,9 @@ const JobForm = () => {
                     <input {...methods.register('images')} type='file' multiple name='images' className={styles.fileInput}/>
                     {'Choose images'}
                 </label>
-                
-                {images && images.length > 0 && images.map(image => <FileItem fileName={image.namme} />)}
+                <div className={styles.filesContainer}>
+                    {images && images.length > 0 && Array.from(images).map(image => <FileItem fileName={image.name} />)}
+                </div>
                 <Button isLoading={loading} text='Add job' />
             </form>
         </FormProvider>

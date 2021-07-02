@@ -4,7 +4,7 @@
 .primaryButton {
     @extend %horizontal-container;
 
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     background-color: $nord8;
     color: $nord0;
     width: 8rem;

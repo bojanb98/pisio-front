@@ -8,9 +8,25 @@
 }
 
 .chooseImagesLabel {
-    background-color: $nord4;
-    font-size: medium;
+    @extend %default-container;
+
+    background-color: $nord8;
     color: $nord0;
+
+    font-size: medium;
+    margin: 1rem;
+    height: 2rem;
+    width: 10rem;
+    border-radius: 0.5rem;
+    
+}
+
+.filesContainer {
+    @extend %horizontal-container;
+    flex-wrap: wrap;
+
+    width: 80%;
+    margin: 0.2rem;
 }
 
 .fileInput {
