@@ -1,0 +1,47 @@
+@import '../../../Containers.scss';
+@import "node_modules/nord/src/sass/nord.scss";
+
+.jobItem {
+    @extend %horizontal-container;
+
+    border-radius: 0.5rem;
+    border-width: 0.1rem;
+    border-style: solid;
+    border-color: $nord8;
+
+    margin: 0.2rem;
+    width: 95%;
+    height: 2rem;
+}
+
+
+.idLabel {
+    @extend %horizontal-container;
+
+    width: 40%;
+    word-wrap: break-word;
+}
+
+.loadingItem {
+    @extend %horizontal-container;
+
+    width: 20%;
+
+    margin: 0 1rem;
+}
+
+.tick {
+    color: $nord14;
+}
+
+.downloadHref {
+    width: 20%;
+}
+
+.downloadHref:link {
+    color: $nord8;
+}
+
+.downloadHref:link {
+    color: $nord14;
+}
