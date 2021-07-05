@@ -1,0 +1,11 @@
+@import '../../../Containers.scss';
+@import "node_modules/nord/src/sass/nord.scss";
+
+
+.tableContainer {
+    @extend %vertical-container;
+
+    width: 100%;
+    padding-bottom: 1rem;
+    border-radius: 0.5rem;
+}

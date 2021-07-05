@@ -23,12 +23,12 @@ const JobItem = ({ jobId, lastJsonMessage }) => {
             <div className={styles.loadingItem}>
                 {isOcrDone && <MdDone size={20} className={styles.tick} />}
                 <ClipLoader loading={!isOcrDone} size={15} />
-                {'Optical character recognition'}
+                {isOcrDone ? 'Done' : 'Loading'}
             </div>
             <div className={styles.loadingItem}>
                 {isGifDone && <MdDone size={20} className={styles.tick} />}
                 <ClipLoader loading={!isGifDone} size={15} />
-                {'Gif creation'}
+                {isGifDone ? 'Done' : 'Loading'}
             </div>
             <div className={styles.hrefContainer}>
                 {isGifDone && isOcrDone && <a href="facebook.com" className={styles.downloadHref}>Download</a>}
