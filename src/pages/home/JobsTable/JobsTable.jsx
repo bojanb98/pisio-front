@@ -4,7 +4,7 @@ import styles from './JobsTable.module.scss';
 import JobsTableHeader from './TableHeader';
 
 
-const JobsTable = ({ jobs, sendJsonMessage, lastJsonMessage }) => {
+const JobsTable = ({ jobs, lastJsonMessage }) => {
 
     const [currentJobs, setCurrentJobs] = useState(jobs);
 
