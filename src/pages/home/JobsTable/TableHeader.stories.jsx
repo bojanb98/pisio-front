@@ -4,8 +4,8 @@ import JobsTableHeader from './TableHeader';
 
 export default {
   component: JobsTableHeader,
-  title: 'Components/JobsTableHeader',
+  title: 'Components/JobsTable/TableHeader',
 }
 
 
-export const TableHeader = () => <JobsTableHeader />
+export const EmptyJobsTable = () => <JobsTableHeader />

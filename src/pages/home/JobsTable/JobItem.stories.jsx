@@ -4,9 +4,8 @@ import JobItem from './JobItem';
 
 export default {
   component: JobItem,
-  title: 'Components/JobItem',
+  title: 'Components/JobsTable/JobItem',
 }
-
 
 
 export const LoadingJobItem = () => <JobItem jobId='123456789' lastJsonMessage={{jobId: '123'}}/>
