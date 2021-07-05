@@ -30,7 +30,9 @@ const JobItem = ({ jobId, lastJsonMessage }) => {
                 <ClipLoader loading={!isGifDone} size={15} />
                 {'Gif creation'}
             </div>
-            {isGifDone && isOcrDone && <a href="facebook.com" className={styles.downloadHref}>Download</a>}
+            <div className={styles.hrefContainer}>
+                {isGifDone && isOcrDone && <a href="facebook.com" className={styles.downloadHref}>Download</a>}
+            </div>
         </div>
     )
 }

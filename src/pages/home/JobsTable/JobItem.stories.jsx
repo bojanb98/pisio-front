@@ -8,4 +8,6 @@ export default {
 }
 
 
-export const LoadingJobItem = () => <JobItem jobId='123456789' lastJsonMessage='123'/>
+
+export const LoadingJobItem = () => <JobItem jobId='123456789' lastJsonMessage={{jobId: '123'}}/>
+export const CompletedJobItem = () => <JobItem jobId='123456789' lastJsonMessage={{jobId: '123456789'}}/>
