@@ -1,0 +1,11 @@
+@import '../../Containers.scss';
+@import "node_modules/nord/src/sass/nord.scss";
+
+.headerContainer {
+    @extend %horizontal-container;
+
+    width: 100%;
+
+    background-color: $nord1;
+    color: $nord5;
+ }

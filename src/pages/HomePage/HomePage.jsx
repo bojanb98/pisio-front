@@ -1,6 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
-import AppLayout from '../../layouts/AppLayout/AppLayout';
+import React, { useState } from 'react';
 import styles from './HomePage.module.scss';
 
 
@@ -13,12 +11,10 @@ const HomePage = () => {
     }
 
     return (
-        <AppLayout>
-            <div className={styles.homePage}>
-                np
-            </div>
-        </AppLayout>
-        
+        <div className={styles.homePage}>
+            np
+        </div>
+
     );
 }
 

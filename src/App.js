@@ -1,10 +1,6 @@
 import './App.css';
-import LoginPage from './pages/LoginPage/LoginPage';
+import Routes from './routes/Routes';
 
-function App() {
-  return (
-    <LoginPage />
-  );
-}
+const App = () => <Routes />
 
 export default App;

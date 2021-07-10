@@ -4,11 +4,14 @@ import App from './App';
 import './index.css';
 import { ProviderWrapper } from './ProviderWrapper';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <ProviderWrapper>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ProviderWrapper>
 
   </React.StrictMode>,

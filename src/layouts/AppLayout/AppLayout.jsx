@@ -1,5 +1,5 @@
-import styles from './AppLayout.module.scss';
 import Header from '../Header/Header';
+import styles from './AppLayout.module.scss';
 
 
 const AppLayout = ({ children }) => {

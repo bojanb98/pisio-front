@@ -1,0 +1,35 @@
+@import "../../Containers.scss";
+@import "node_modules/nord/src/sass/nord.scss";
+
+
+.headerItem {
+    @extend %horizontal-container;
+
+    width: 5rem;
+    margin: 1rem;
+
+    color: $nord5;
+}
+
+
+.bigHeaderItem {
+    @extend %horizontal-container;
+
+    width: 100%;
+    height: 100%;
+
+    align-items: left;
+    justify-content: left;
+
+    margin: 1rem 5rem;
+
+    font-weight: bold;
+    text-decoration: none;
+
+    color: $nord5;
+}
+
+
+.linkStyle {
+    text-decoration: none;
+}

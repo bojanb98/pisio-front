@@ -4,6 +4,8 @@
 .registerForm {
     @extend %vertical-container;
 
-    background-color: $nord5;
+    background-color: $nord6;
     border-radius: 0.5rem;
+
+    padding: 5rem;
 }

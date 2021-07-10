@@ -1,19 +1,21 @@
-import { BrowserRouter as Router, Redirect, Switch } from "react-router-dom";
-import Login from "../pages/login/Login";
-import Register from "../pages/register/Register";
+import React from 'react';
+import { Redirect, Switch } from "react-router-dom";
+import AppLayout from '../layouts/AppLayout/AppLayout';
+import HomePage from "../pages/HomePage/HomePage";
+import LoginPage from "../pages/LoginPage/LoginPage";
+import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import RouteWrapper from "./RouterWrapper";
 
 
-const Routes = (_) => {
+const Routes = () => {
    return (
-      <Router>
-         <Switch>
-            <RouteWrapper exact path='/login' component={Login} />
-            <RouteWrapper exact path='/register' component={Register} />
+      <Switch>
+         <RouteWrapper exact path={['/', '/home']} component={HomePage} layout={AppLayout} />
+         <RouteWrapper exact path='/login' component={LoginPage} layout={AppLayout} />
+         <RouteWrapper exact path='/register' component={RegisterPage} layout={AppLayout} />
 
-            <Redirect from="*" to="/" /> 
-         </Switch>
-      </Router>
+         <Redirect from="*" to="/" />
+      </Switch>
    );
 };
 

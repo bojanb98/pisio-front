@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import Button from '../../shared/Button/Button';
 import ErrorMessage from '../../shared/ErrorMessage/ErrorMessage';
 import InputItem from '../../shared/InputItem/InputItem';
@@ -12,6 +13,8 @@ const LoginForm = () => {
 
     const methods = useForm();
 
+    const history = useHistory();
+
     const dispatch = useDispatch();
     const { isLoading, error } = useSelector(state => state.login);
 
@@ -20,9 +23,8 @@ const LoginForm = () => {
     }, [isLoading]);
 
 
-
     const handleLogin = (data) => {
-        dispatch(loginAction(data.username, data.password));
+        dispatch(loginAction(data.username, data.password, history));
     }
 
     return (
