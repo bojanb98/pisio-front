@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import Button from '../../shared/Button/Button';
 import InputItem from '../../shared/InputItem/InputItem';
-import styles from './Register.module.scss';
+import styles from './RegisterForm.module.scss';
 
-const Register = () => {
+const RegisterForm = () => {
 
     const methods = useForm();
     const [loading, setLoading] = useState(false);
@@ -38,4 +38,4 @@ const Register = () => {
 
 }
 
-export default Register;
+export default RegisterForm;
