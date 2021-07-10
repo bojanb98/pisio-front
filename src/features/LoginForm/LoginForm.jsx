@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import styles from './Login.module.scss';
+import styles from './LoginForm.module.scss';
 import InputItem from '../../shared/InputItem/InputItem';
 import Button from '../../shared/Button/Button';
 
-const Login = () => {
+const LoginForm = () => {
 
     const methods = useForm();
     const [loading, setLoading] = useState(false);
@@ -31,4 +31,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default LoginForm;
