@@ -1,4 +1,3 @@
-import HeaderDropdown from '../../features/HeaderDropdown/HeaderDropdown';
 import styles from './Header.module.css';
 
 
