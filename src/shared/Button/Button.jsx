@@ -22,6 +22,7 @@ const Button = ({ text, isLoading }) => {
         <button
             className={styles.primaryButton}
             type="submit"
+            disabled={loading}
         >
             <ClipLoader loading={loading} size={15} css={override}/>
             {text}
