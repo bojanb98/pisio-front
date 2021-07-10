@@ -4,9 +4,11 @@
 .loginForm {
     @extend %vertical-container;
 
-    width: 30%;
+    width: 25%;
     min-height: 40vh;
 
     background-color: $nord6;
     border-radius: 0.5rem;
+
+    padding: 5rem;
 }
