@@ -4,7 +4,7 @@ import JobItem from './JobItem';
 
 export default {
   component: JobItem,
-  title: 'Components/JobsTable/JobItem',
+  title: 'Features/JobsTable/JobItem',
 }
 
 

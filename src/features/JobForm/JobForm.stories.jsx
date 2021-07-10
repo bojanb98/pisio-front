@@ -4,7 +4,7 @@ import JobForm from './JobForm';
 
 export default {
   component: JobForm,
-  title: 'Components/JobForm/JobForm',
+  title: 'Features/JobForm/JobForm',
 }
 
 export const SimpleJobForm = () => <JobForm />

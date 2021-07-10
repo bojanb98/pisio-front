@@ -4,7 +4,7 @@ import JobsTable from './JobsTable';
 
 export default {
   component: JobsTable,
-  title: 'Components/JobsTable/JobsTable',
+  title: 'Features/JobsTable/JobsTable',
 }
 
 

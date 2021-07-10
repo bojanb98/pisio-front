@@ -4,7 +4,7 @@ import JobsTableHeader from './TableHeader';
 
 export default {
   component: JobsTableHeader,
-  title: 'Components/JobsTable/TableHeader',
+  title: 'Features/JobsTable/TableHeader',
 }
 
 
