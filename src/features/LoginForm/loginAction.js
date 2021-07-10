@@ -4,12 +4,16 @@ import auth from "../../api/services/auth";
 const loginAction = (username, password) => (dispatch) => {
     dispatch(loginPending())
 
-    auth
+    return auth
         .login(username, password)
-        .then(response => {
-            console.log(response.data);
-            dispatch(loginSuccess());
-        })
+        .then(
+            response => {
+                console.log('success')
+                dispatch(loginSuccess())
+            },
+            error => {
+                dispatch(loginFail('Invalid username or password'));
+            })
         .catch(error => loginFail(error));
 }
 

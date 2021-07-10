@@ -4,7 +4,7 @@ import prodConfig from './config.prod.json';
 
 
 const getEnvironment = () => {
-    switch (process.env.REACT_APP_ENV) {
+    switch (process.env.REACT_APP_API_ENV) {
         case 'devkube': {
             return devkubeConfig;
         }

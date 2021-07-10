@@ -1,12 +1,11 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useEffect } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import styles from './LoginForm.module.scss';
-import InputItem from '../../shared/InputItem/InputItem';
-import Button from '../../shared/Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import loginAction from './loginAction';
+import Button from '../../shared/Button/Button';
 import ErrorMessage from '../../shared/ErrorMessage/ErrorMessage';
+import InputItem from '../../shared/InputItem/InputItem';
+import loginAction from './loginAction';
+import styles from './LoginForm.module.scss';
 
 
 const LoginForm = () => {
@@ -15,6 +14,12 @@ const LoginForm = () => {
 
     const dispatch = useDispatch();
     const { isLoading, error } = useSelector(state => state.login);
+
+    useEffect(() => {
+        console.log(isLoading);
+    }, [isLoading]);
+
+
 
     const handleLogin = (data) => {
         dispatch(loginAction(data.username, data.password));
@@ -28,8 +33,8 @@ const LoginForm = () => {
             >
                 <InputItem id='username' requirements={{ required: true }} placeholderText='Username' />
                 <InputItem id='password' requirements={{ required: true }} placeholderText='Password' type='password' />
-                <Button isLoading={isLoading} text='Login' />
                 {error && <ErrorMessage message={error} />}
+                <Button isLoading={isLoading} text='Login' />
             </form>
         </FormProvider>
     )
