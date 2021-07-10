@@ -6,7 +6,6 @@ const Header = (props) => {
 
    return ( <div className={styles.headerContainer}>
       <div>Header</div>
-      <HeaderDropdown></HeaderDropdown>
    </div> );
 }
  

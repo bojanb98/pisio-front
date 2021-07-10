@@ -2,9 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import styles from './JobForm.module.scss';
-import Button from '../../../shared/Button/Button';
 import FileItem from './FileItem';
 import { useEffect } from 'react';
+import Button from '../../shared/Button/Button';
 
 
 const JobForm = () => {
