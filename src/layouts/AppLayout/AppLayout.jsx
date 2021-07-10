@@ -1,4 +1,4 @@
-import styles from './AppLayout.module.css';
+import styles from './AppLayout.module.scss';
 import Header from '../Header/Header';
 
 
