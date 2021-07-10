@@ -6,6 +6,7 @@ import InputItem from '../../shared/InputItem/InputItem';
 import Button from '../../shared/Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import loginAction from './loginAction';
+import ErrorMessage from '../../shared/ErrorMessage/ErrorMessage';
 
 
 const LoginForm = () => {
@@ -28,7 +29,7 @@ const LoginForm = () => {
                 <InputItem id='username' requirements={{ required: true }} placeholderText='Username' />
                 <InputItem id='password' requirements={{ required: true }} placeholderText='Password' type='password' />
                 <Button isLoading={isLoading} text='Login' />
-                
+                {error && <ErrorMessage message={error} />}
             </form>
         </FormProvider>
     )

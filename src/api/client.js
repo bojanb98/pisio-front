@@ -1,16 +1,8 @@
-const send = async (url, options) => {
-    const response = await fetch(url, options);
-    const data = await response.json();
-    return data;
-}
+import axios from "axios";
 
 
-const post = async (url, options) => {
-    const response = await send(url, {
-        ...options,
-        method: "POST",
-    });
-    return response;
+const post = (url, data, options) => {
+    return axios.post(url, data, ...options);
 }
 
 

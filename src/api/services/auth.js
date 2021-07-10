@@ -4,21 +4,19 @@ import { post } from "../client";
 
 const baseUrl = getEnvironment().baseAuthServiceUrl;
 
-const login = async (username, password) => {
-    const response = await post(
+const login = (username, password) => {
+    return post(
         baseUrl + 'login', 
-        { body: JSON.stringify({ username, password }) }
+        { username, password }
     )
-    return response;
 }
 
 
-const register = async (username, password) => {
-    const response = await post(
+const register = (username, password) => {
+    return post(
         baseUrl + 'register', 
-        { body: JSON.stringify({ username, password }) }
+        { username, password }
     )
-    return response;
 }
 
 

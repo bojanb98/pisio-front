@@ -4,27 +4,25 @@ import { post } from "../client";
 
 const baseUrl = getEnvironment().baseFileServiceUrl;
 
-const upload = async (images) => {
+const upload = (images) => {
     const formData = new FormData();
     formData.append('files', images);
 
-    const response = await post(
+    return post(
         baseUrl + 'upload',
+        formData,
         {
             headers: { 'Content-Type': 'multipart/form-data' },
-            body: formData
         }
     )
-    return response;
 }
 
 
-const download = async (jobId) => {
-    const response = await post(
+const download = (jobId) => {
+    return post(
         baseUrl + '/download',
-        { body: JSON.stringify({ jobId }) }
-    )
-    return response;
+        { jobId }
+    );
 }
 
 
