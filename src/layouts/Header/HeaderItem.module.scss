@@ -32,4 +32,11 @@
 
 .linkStyle {
     text-decoration: none;
+    font-size: medium;
+    font-style: normal;
+    color: $nord6;
+}
+
+.linkStyle:hover {
+    color: $nord7;
 }

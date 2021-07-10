@@ -5,7 +5,7 @@
     @extend %vertical-container;
 
     width: 30%;
-    height: 60vh;
+    min-height: 40vh;
 
     background-color: $nord6;
     border-radius: 0.5rem;
