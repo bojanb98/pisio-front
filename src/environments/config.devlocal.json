@@ -1,5 +1,5 @@
 {
-    "baseFileServiceUrl": "http://localhost:10000/",
-    "baseAuthServiceUrl": "http://localhost:11000/",
+    "baseFileServiceUrl": "http://localhost:11000/",
+    "baseAuthServiceUrl": "http://localhost:10000/",
     "baseCommunicationServiceUrl": "https://localhost:15000/"
 }

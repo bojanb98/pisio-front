@@ -1,11 +1,9 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import styles from './JobForm.module.scss';
-import FileItem from './FileItem';
-import { useEffect } from 'react';
-import Button from '../../shared/Button/Button';
 import files from '../../api/services/files';
+import Button from '../../shared/Button/Button';
+import FileItem from './FileItem';
+import styles from './JobForm.module.scss';
 
 
 const JobForm = ({ addJobToTable }) => {
@@ -27,7 +25,7 @@ const JobForm = ({ addJobToTable }) => {
             .then(
                 response => {
                     addJobToTable(response.data.jobId);
-                }, 
+                },
                 error => {
                     console.log(error);
                 }
@@ -39,18 +37,20 @@ const JobForm = ({ addJobToTable }) => {
     }
 
     return (
-        <FormProvider {...methods}>
-            <form className={styles.jobForm} onSubmit={methods.handleSubmit(addJob)}>
-                <label className={styles.chooseImagesLabel}>
-                    <input {...methods.register('images')} type='file' multiple name='images' className={styles.fileInput} />
-                    {'Choose images'}
-                </label>
-                <div className={styles.filesContainer}>
-                    {images && images.length > 0 && Array.from(images).map((image, key) => <FileItem key={key} fileName={image.name} />)}
-                </div>
-                <Button isLoading={loading} text='Add job' />
-            </form>
-        </FormProvider>
+        <div className={styles.formContainer}>
+            <FormProvider {...methods}>
+                <form className={styles.jobForm} onSubmit={methods.handleSubmit(addJob)}>
+                    <label className={styles.chooseImagesLabel}>
+                        <input {...methods.register('images')} type='file' multiple name='images' className={styles.fileInput} />
+                        {'Choose images'}
+                    </label>
+                    <Button isLoading={loading} text='Add job' />
+                </form>
+            </FormProvider>
+            <div className={styles.filesContainer}>
+                {images && images.length > 0 && Array.from(images).map((image, key) => <FileItem key={key} fileName={image.name} />)}
+            </div>
+        </div>
     );
 }
 

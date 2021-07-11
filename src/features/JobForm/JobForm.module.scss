@@ -1,6 +1,15 @@
 @import '../../Containers.scss';
 @import "node_modules/nord/src/sass/nord.scss";
 
+.formContainer {
+    @extend %vertical-container;
+    background-color: $nord5;
+
+    width: 100%;
+
+    align-self: flex-start;
+}
+
 .jobForm {
     @extend %horizontal-container;
 
@@ -29,8 +38,14 @@
     @extend %horizontal-container;
     flex-wrap: wrap;
 
-    width: 80%;
-    margin: 0.2rem;
+    margin-left: 0.8rem;
+    margin-bottom: 0.5rem;
+
+    width: 100%;
+
+    align-self: flex-start;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .fileInput {
