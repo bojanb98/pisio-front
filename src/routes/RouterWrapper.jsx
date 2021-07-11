@@ -1,9 +1,7 @@
+import React from 'react';
 import { Route } from "react-router-dom";
-import AppLayout from "../layouts/AppLayout/AppLayout";
 
-const RouteWrapper = ({ component: Component, ...rest }) => {
-
-   const Layout = AppLayout;
+const RouteWrapper = ({ component: Component, layout: Layout, ...rest }) => {
 
    return (
       <Route
