@@ -11,7 +11,7 @@
 
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
-    width: 100%;
+    width: 98%;
     height: 2rem;
 
     background-color: $nord5;
@@ -29,7 +29,7 @@
 .loadingItem {
     @extend %horizontal-container;
 
-    width: 20%;
+    width: 19%;
 
     margin: 0 1rem;
 }
@@ -39,7 +39,7 @@
 }
 
 .hrefContainer {
-    width: 20%;
+    width: 19%;
 }
 
 .downloadHref:link {

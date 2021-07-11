@@ -1,4 +1,4 @@
-@import '../../Containers.scss';
+@import "../../Containers.scss";
 @import "node_modules/nord/src/sass/nord.scss";
 
 .headerContainer {
@@ -10,4 +10,16 @@
     color: $nord5;
 
     padding: 0 2rem 0 2rem;
- }
+}
+
+.logoutStyle {
+    text-decoration: none;
+    font-size: medium;
+    font-style: normal;
+    color: $nord6;
+}
+
+.logoutStyle:hover {
+    color: $nord7;
+    cursor: pointer;
+}

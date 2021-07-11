@@ -19,6 +19,9 @@ const RegisterForm = () => {
     const handleRegister = (data) => {
         setLoading(true);
         
+        setIsError(false);
+        setIsSuccess(false);
+
         auth
             .register(data.username, data.password)
             .then(
@@ -50,8 +53,8 @@ const RegisterForm = () => {
                     requirements={{ required: true, validate: value => value === methods.watch('password')}} 
                     placeholderText='Repeat password' 
                     type='password' />
-                {isError && <ErrorMessage text='An error ocurred during registration' />}
-                {isSuccess && <SuccessMessage text='You have sucessfully registered' />}
+                {isError && <ErrorMessage message='An error ocurred during registration' />}
+                {isSuccess && <SuccessMessage message='You have sucessfully registered' />}
                 <Button isLoading={loading} text='Login' />
             </form>
         </FormProvider>

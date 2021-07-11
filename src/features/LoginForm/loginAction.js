@@ -1,5 +1,6 @@
 import { loginPending, loginSuccess, loginFail } from "./loginSlice";
 import auth from "../../api/services/auth";
+import AUTH_TOKEN_STORAGE_KEY from "./loginConstants";
 
 const loginAction = (username, password, history) => (dispatch) => {
     dispatch(loginPending())
@@ -9,8 +10,7 @@ const loginAction = (username, password, history) => (dispatch) => {
         .then(
             response => {
                 console.log(response.data);
-                sessionStorage.setItem('accessJWT', response.data.jwtToken);
-                localStorage.setItem('imageProcessingToken', JSON.stringify(response.data));
+                localStorage.setItem(AUTH_TOKEN_STORAGE_KEY, JSON.stringify(response.data));
                 dispatch(loginSuccess());
                 history.push('/home');
             },

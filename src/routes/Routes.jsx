@@ -6,7 +6,6 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
-import RouteWrapper from "./RouterWrapper";
 
 
 const Routes = () => {

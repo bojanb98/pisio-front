@@ -7,8 +7,13 @@
     border-radius: 0.5rem;
     background-color: $nord8;
     color: $nord0;
-    width: 8rem;
     height: 2rem;
     font-size: medium;
     margin: 0.5rem;
+
+    min-width: 8rem;
+}
+
+.primaryButton:hover {
+    background-color: $nord9;
 }

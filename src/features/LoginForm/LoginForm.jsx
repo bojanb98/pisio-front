@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -17,11 +17,6 @@ const LoginForm = () => {
 
     const dispatch = useDispatch();
     const { isLoading, error } = useSelector(state => state.login);
-
-    useEffect(() => {
-        console.log(isLoading);
-    }, [isLoading]);
-
 
     const handleLogin = (data) => {
         dispatch(loginAction(data.username, data.password, history));
