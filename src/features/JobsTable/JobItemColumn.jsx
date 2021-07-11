@@ -19,8 +19,8 @@ const JobItemColumn = ({ partStatus }) => {
     return (
         <div className={styles.loadingItem}>
                 {status === 'PENDING' && 'Pending'}
-                {status === 'IN_PROGRESS' && <><ClipLoader loading={status === 'IN_PROGRESS'} size={15} />'In progress'</>}
-                {status === 'DONE' && <><MdDone size={20} className={styles.tick} />'Done'</>}  
+                {status === 'IN_PROGRESS' && <><ClipLoader loading={status === 'IN_PROGRESS'} size={15} />In progress</>}
+                {status === 'DONE' && <><MdDone size={20} className={styles.tick} />Done</>}  
         </div>
     );
 }
