@@ -5,9 +5,10 @@ import styles from './JobForm.module.scss';
 import FileItem from './FileItem';
 import { useEffect } from 'react';
 import Button from '../../shared/Button/Button';
+import files from '../../api/services/files';
 
 
-const JobForm = () => {
+const JobForm = ({ addJobToTable }) => {
 
     const methods = useForm();
 
@@ -21,15 +22,27 @@ const JobForm = () => {
 
     const addJob = (data) => {
         setLoading(true);
-        console.log(data);
-        setLoading(false);
+        files
+            .upload(data.images)
+            .then(
+                response => {
+                    addJobToTable(response.data.jobId);
+                }, 
+                error => {
+                    console.log(error);
+                }
+            )
+            .catch(error => {
+                console.log(error);
+            })
+            .then(setLoading(false));
     }
 
     return (
         <FormProvider {...methods}>
             <form className={styles.jobForm} onSubmit={methods.handleSubmit(addJob)}>
                 <label className={styles.chooseImagesLabel}>
-                    <input {...methods.register('images')} type='file' multiple name='images' className={styles.fileInput}/>
+                    <input {...methods.register('images')} type='file' multiple name='images' className={styles.fileInput} />
                     {'Choose images'}
                 </label>
                 <div className={styles.filesContainer}>

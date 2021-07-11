@@ -34,7 +34,7 @@ const RegisterForm = () => {
                 console.log(error);
                 setIsError(true);
             })
-        setLoading(false);
+            .then(setLoading(false));
     }
 
     return (

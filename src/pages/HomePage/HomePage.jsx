@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import JobForm from '../../features/JobForm/JobForm';
+import JobsTable from '../../features/JobsTable/JobsTable';
 import styles from './HomePage.module.scss';
 
 
@@ -12,7 +14,8 @@ const HomePage = () => {
 
     return (
         <div className={styles.homePage}>
-            np
+            <JobForm addJobToTable={addJob}/>
+            <JobsTable jobs={jobs} lastJsonMessage='' />
         </div>
 
     );
