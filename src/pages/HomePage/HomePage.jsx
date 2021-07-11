@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import useWebSocket from 'react-use-websocket';
+import getEnvironment from '../../environments';
 import JobForm from '../../features/JobForm/JobForm';
 import JobsTable from '../../features/JobsTable/JobsTable';
+import AUTH_TOKEN_STORAGE_KEY from '../../features/LoginForm/loginConstants';
 import styles from './HomePage.module.scss';
 
 
@@ -12,10 +15,25 @@ const HomePage = () => {
         setJobs([...jobs, newJob]);
     }
 
+    const token = JSON.parse(localStorage.getItem(AUTH_TOKEN_STORAGE_KEY)).jwtToken;
+
+    const { lastJsonMessage, readyState } = useWebSocket(getEnvironment().communicationServiceUrl, {
+        protocols: token,
+        onError: (e) => {
+            console.log(e);
+        },
+        onReconnectStop: (e) => {
+            console.log(e);
+        },
+        onClose: (e) => {
+            console.log(e);
+        }
+    });
+
     return (
         <div className={styles.homePage}>
-            <JobForm addJobToTable={addJob}/>
-            <JobsTable jobs={jobs} lastJsonMessage='' />
+            <JobForm addJobToTable={addJob} socketState={readyState} />
+            <JobsTable jobs={jobs} lastJsonMessage={lastJsonMessage} />
         </div>
 
     );

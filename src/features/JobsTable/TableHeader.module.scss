@@ -19,11 +19,11 @@
 
 
 %column-container {
+    @extend %default-container;
+
     word-wrap: break-word;
     font-weight: bold;
     text-align: center;
-    justify-content: center;
-    align-items: center;
 }
 
 .idHeaderContainer {

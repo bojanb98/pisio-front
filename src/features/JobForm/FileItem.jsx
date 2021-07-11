@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './FileItem.module.scss';
 
-const FileItem = ({key, fileName}) => {
+const FileItem = ({ fileName }) => {
 
     return (
-        <div className={styles.fileItem} key={key}>
+        <div className={styles.fileItem}>
             {fileName}
         </div>
     )

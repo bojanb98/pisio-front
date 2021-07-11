@@ -27,16 +27,15 @@
     text-align: center;
 }
 
-.hrefContainer {
-    width: 17%;
+.downloadContainer {
+    min-width: 17%;
 
     text-align: center;
+
+    color: $nord7;
 }
 
-.downloadHref:link {
+.downloadContainer:hover {
     color: $nord8;
-}
-
-.downloadHref:link {
-    color: $nord14;
+    cursor: pointer;
 }

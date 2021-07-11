@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
+import { ReadyState } from 'react-use-websocket';
 import files from '../../api/services/files';
 import Button from '../../shared/Button/Button';
 import FileItem from './FileItem';
 import styles from './JobForm.module.scss';
 
 
-const JobForm = ({ addJobToTable }) => {
+const JobForm = ({ addJobToTable, socketState }) => {
 
     const methods = useForm();
 
     const images = methods.watch('images');
 
+    const [isReady, setIsReady] = useState(false);
+
     useEffect(() => {
-        console.log(images);
-    }, [images])
+        setIsReady(socketState === ReadyState);
+    }, [socketState])
 
     const [loading, setLoading] = useState(false);
 
@@ -25,6 +28,7 @@ const JobForm = ({ addJobToTable }) => {
             .then(
                 response => {
                     addJobToTable(response.data.jobId);
+                    methods.reset();
                 },
                 error => {
                     console.log(error);
@@ -47,8 +51,9 @@ const JobForm = ({ addJobToTable }) => {
                     <Button isLoading={loading} text='Add job' />
                 </form>
             </FormProvider>
+
             <div className={styles.filesContainer}>
-                {images && images.length > 0 && Array.from(images).map((image, key) => <FileItem key={key} fileName={image.name} />)}
+                {images && images.length > 0 && Array.from(images).map(image => <FileItem fileName={image.name} />)}
             </div>
         </div>
     );

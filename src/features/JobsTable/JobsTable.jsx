@@ -3,7 +3,6 @@ import JobItem from './JobItem';
 import styles from './JobsTable.module.scss';
 import JobsTableHeader from './TableHeader';
 
-
 const JobsTable = ({ jobs, lastJsonMessage }) => {
 
     const [currentJobs, setCurrentJobs] = useState(jobs);
@@ -12,6 +11,9 @@ const JobsTable = ({ jobs, lastJsonMessage }) => {
         setCurrentJobs(jobs);
     }, [jobs]);
 
+    useEffect(() => {
+        console.log(lastJsonMessage);
+    }, [lastJsonMessage]);
 
     return (
         <div className={styles.tableContainer}>
