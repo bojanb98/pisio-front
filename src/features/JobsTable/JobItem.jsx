@@ -1,37 +1,42 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './JobItem.module.scss';
-import ClipLoader from "react-spinners/ClipLoader";
-import { useEffect } from 'react';
-import { MdDone } from 'react-icons/md'
+import JobItemColumn from './JobItemColumn';
 
 const JobItem = ({ jobId, lastJsonMessage }) => {
 
-    const [isOcrDone, setOcrDone] = useState(false);
-    const [isGifDone, setGifDone] = useState(false);
+    const [ocrStatus, setOcrStatus] = useState('PENDING');
+    const [pdfStatus, setPdfStatus] = useState('PENDING');
+    const [gifStatus, setGifStatus] = useState('PENDING');
+
+    const [isAllDone, setIsAllDone] = useState(false);
 
     useEffect(() => {
-        if (lastJsonMessage.jobId === jobId) {
-            setOcrDone(true);
-            setGifDone(true);
+        const newIsAllDone = ocrStatus === 'DONE' && pdfStatus === 'DONE' && gifStatus === 'DONE';
+        setIsAllDone(newIsAllDone);
+    }, [ocrStatus, pdfStatus, gifStatus]);
+
+    useEffect(() => {
+        if (lastJsonMessage && lastJsonMessage.jobId === jobId) {
+            const jobPart = lastJsonMessage.jobPart;
+            const partStatus = lastJsonMessage.partStatus;
+            if (jobPart === 'OCR') {
+                setOcrStatus(partStatus);
+            } else if (jobPart === 'PDF') {
+                setPdfStatus(partStatus);
+            } else if (jobPart === 'GIF') {
+                setGifStatus(partStatus);
+            }
         }
     }, [lastJsonMessage]);
 
     return (
         <div className={styles.jobItem}>
             <label className={styles.idLabel}>{jobId}</label>
-            <div className={styles.loadingItem}>
-                {isOcrDone && <MdDone size={20} className={styles.tick} />}
-                <ClipLoader loading={!isOcrDone} size={15} />
-                {isOcrDone ? 'Done' : 'Loading'}
-            </div>
-            <div className={styles.loadingItem}>
-                {isGifDone && <MdDone size={20} className={styles.tick} />}
-                <ClipLoader loading={!isGifDone} size={15} />
-                {isGifDone ? 'Done' : 'Loading'}
-            </div>
+            <JobItemColumn partStatus={ocrStatus} />
+            <JobItemColumn partStatus={pdfStatus} />
+            <JobItemColumn partStatus={gifStatus} />
             <div className={styles.hrefContainer}>
-                {isGifDone && isOcrDone && <a href="facebook.com" className={styles.downloadHref}>Download</a>}
+                {isAllDone && <a href="facebook.com" className={styles.downloadHref}>Download</a>}
             </div>
         </div>
     )

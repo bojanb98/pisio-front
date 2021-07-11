@@ -12,6 +12,9 @@ const JobsTableHeader = () =>
             Optical character recognition status
         </div>
         <div className={styles.statusHeaderContainer}>
+            PDF creation status
+        </div>
+        <div className={styles.statusHeaderContainer}>
             GIF creation status
         </div>
         <div className={styles.statusHeaderContainer} />

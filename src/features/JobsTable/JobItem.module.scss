@@ -22,14 +22,14 @@
 .idLabel {
     @extend %horizontal-container;
 
-    width: 40%;
+    width: 30%;
     word-wrap: break-word;
 }
 
 .loadingItem {
     @extend %horizontal-container;
 
-    width: 19%;
+    width: 17%;
 
     margin: 0 1rem;
 }
@@ -39,7 +39,7 @@
 }
 
 .hrefContainer {
-    width: 19%;
+    width: 17%;
 }
 
 .downloadHref:link {

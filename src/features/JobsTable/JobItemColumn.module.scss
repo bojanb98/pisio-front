@@ -1,0 +1,14 @@
+@import "../../Containers.scss";
+@import "node_modules/nord/src/sass/nord.scss";
+
+.loadingItem {
+    @extend %horizontal-container;
+
+    width: 19%;
+
+    margin: 0 1rem;
+}
+
+.tick {
+    color: $nord14;
+}
