@@ -1,5 +1,5 @@
 {
     "baseFileServiceUrl": "http://192.168.99.100/images/",
     "baseAuthServiceUrl": "http://192.168.99.100/auth/",
-    "baseCommunicationServiceUrl": "http://192.168.99.100/communication/"
+    "communicationServiceUrl": "ws://192.168.99.100/communication/ws"
 }
