@@ -7,10 +7,11 @@
     border-radius: 0.5rem;
     background-color: $nord11;
     color: $nord0;
-    height: 2rem;
+    min-height: 2rem;
     width: 16rem;
     font-size: medium;
     margin: 0.5rem;
     word-wrap: break-word;
     opacity: 0.8;
+    text-align: center;
 }
