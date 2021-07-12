@@ -1,23 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { ReadyState } from 'react-use-websocket';
 import files from '../../api/services/files';
 import Button from '../../shared/Button/Button';
 import FileItem from './FileItem';
 import styles from './JobForm.module.scss';
 
 
-const JobForm = ({ addJobToTable, socketState }) => {
+const JobForm = ({ addJobToTable }) => {
 
     const methods = useForm();
 
     const images = methods.watch('images');
-
-    const [isReady, setIsReady] = useState(false);
-
-    useEffect(() => {
-        setIsReady(socketState === ReadyState);
-    }, [socketState])
 
     const [loading, setLoading] = useState(false);
 

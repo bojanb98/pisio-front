@@ -17,7 +17,7 @@ const HomePage = () => {
 
     const token = JSON.parse(localStorage.getItem(AUTH_TOKEN_STORAGE_KEY)).jwtToken;
 
-    const { lastJsonMessage, readyState } = useWebSocket(getEnvironment().communicationServiceUrl, {
+    const { lastJsonMessage } = useWebSocket(getEnvironment().communicationServiceUrl, {
         protocols: token,
         onError: (e) => {
             console.log(e);
@@ -32,7 +32,7 @@ const HomePage = () => {
 
     return (
         <div className={styles.homePage}>
-            <JobForm addJobToTable={addJob} socketState={readyState} />
+            <JobForm addJobToTable={addJob} />
             <JobsTable jobs={jobs} lastJsonMessage={lastJsonMessage} />
         </div>
 
